@@ -4,13 +4,22 @@ function ceaserCipher(word, number) {
   const alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
   const letters = word.split("");
 
-  const finalArray = letters.map((letter) => {
-    const position = alphabet.indexOf(letter);
-    const cipherPosition = (position + number) % alphabet.length;
-    const cipheredArray = alphabet.at(cipherPosition);
-    return cipheredArray;
+  const cipher = letters.map((letter) => {
+    if (letter >= "a" && letter <= "z") {
+      const position = alphabet.indexOf(letter);
+      console.log(position);
+      const cipherPosition = (position + number) % alphabet.length;
+      const result = alphabet.at(cipherPosition);
+      return result;
+    } else {
+      const lowerCaseLetter = letter.toLowerCase();
+      const position = alphabet.indexOf(lowerCaseLetter);
+      const cipherPosition = (position + number) % alphabet.length;
+      const result = alphabet.at(cipherPosition).toUpperCase();
+      return result;
+    }
   });
-
-  const cipher = finalArray.join("");
-  return cipher;
+  const resultingCipher = cipher.join("");
+  console.log(resultingCipher);
+  return resultingCipher;
 }

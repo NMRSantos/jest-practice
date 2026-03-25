@@ -8,4 +8,4 @@
 // console.log(calculator.sum(2, 3));
 
 import { ceaserCipher } from "./ceasarCipher.js";
-ceaserCipher("sofia", 1);
+ceaserCipher("sOfia", 1);
