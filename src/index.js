@@ -6,3 +6,6 @@
 
 // import { calculator } from "./calculator.js";
 // console.log(calculator.sum(2, 3));
+
+import { ceaserCipher } from "./ceasarCipher.js";
+ceaserCipher("sofia", 1);
