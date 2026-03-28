@@ -11,12 +11,14 @@ function ceaserCipher(word, number) {
       const cipherPosition = (position + number) % alphabet.length;
       const result = alphabet.at(cipherPosition);
       return result;
-    } else {
+    } else if (letter >= "A" && letter <= "Z") {
       const lowerCaseLetter = letter.toLowerCase();
       const position = alphabet.indexOf(lowerCaseLetter);
       const cipherPosition = (position + number) % alphabet.length;
       const result = alphabet.at(cipherPosition).toUpperCase();
       return result;
+    } else {
+      return letter;
     }
   });
   const resultingCipher = cipher.join("");
